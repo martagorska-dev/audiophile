@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Manrope", system-ui, sans-serif;
+  }
+
+  body {
+    @apply font-medium;
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold uppercase;
+  }
+
+  h1 {
+    font-size: 55px;
+    line-height: 58px;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+  }
+
+  h3 {
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.15px;
+  }
+
+  h4 {
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 2px;
+  }
+
+  h5 {
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 1.7px;
+  }
+
+  h6 {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1.3px;
+  }
+
+  p {
+    @apply text-gray-200;
+  }
+
+  svg {
+    @apply fill-white transition-colors hover:fill-primary-100;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+}
+
+@layer components {
+  .custom-overline {
+    @apply font-normal uppercase;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 10px;
+  }
+
+  .custom-subtitle {
+    @apply font-bold uppercase;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 1px;
+  }
+
+  .custom-navlink {
+    @apply custom-subtitle text-white transition-colors hover:text-primary-100;
+  }
+
+  .custom-navlink.active {
+    @apply text-primary-100;
+  }
+
+  .custom-label {
+    @apply mb-2 font-bold;
+    font-size: 12px;
+    letter-spacing: -0.21px;
+  }
+
+  .custom-label.error {
+    @apply text-error-50;
+  }
+
+  .custom-input {
+    @apply box-border rounded-lg border border-solid border-gray-50 px-6 font-bold caret-primary-100 outline-none transition-colors hover:cursor-pointer hover:border-primary-100 focus:border-primary-100;
+    height: 56px;
+    font-size: 14px;
+    letter-spacing: -0.25px;
+  }
+
+  .custom-input.error {
+    @apply border-2 border-error-50 caret-error-50;
+  }
+
+  .custom-error-message {
+    @apply mb-2 text-error-50;
+    font-size: 10px;
+    letter-spacing: -0.21px;
+  }
+
+  .custom-radio {
+    @apply relative rounded-full border border-solid border-gray-50 transition-colors;
+    width: 20px;
+    height: 20px;
+  }
+
+  .custom-radio::before {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-colors;
+    content: "";
+    width: 10px;
+    height: 10px;
+  }
+
+  input[type="radio"]:checked + .custom-radio::before {
+    @apply bg-primary-100;
+  }
+}
